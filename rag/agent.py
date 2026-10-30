@@ -18,9 +18,8 @@ class EnterpriseRAGAgent:
                 "answer": "I cannot verify this information with certified enterprise documents.",
                 "guardrail": guard_result
             }
-        context = " 
----
- ".join([c[1].content for c in candidates if c[0] > 0])
+        separator = chr(10) + '---' + chr(10)
+        context = separator.join([c[1].content for c in candidates if c[0] > 0])
         return {
             "query": query,
             "answer": f"Synthesized verified knowledge from {len(candidates)} authoritative chunks.",
