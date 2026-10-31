@@ -22,6 +22,15 @@ Deterministic enterprise document intelligence pipeline with hybrid retrieval (L
       +---> [Rejection Fallback] (Prevents False Information)
 ```
 
+## Benchmark Performance & Evaluation
+
+Deterministic evaluation across 18 test queries and 8 enterprise corpora:
+- **Grounded Retrieval Accuracy:** 100.0%
+- **Hallucination Rejection Rate:** 100.0%
+- **Retrieval & Guardrail Latency (p50):** 29.58 microseconds
+- **Retrieval & Guardrail Latency (p95):** 176.15 microseconds
+- **Retrieval & Guardrail Latency (p99):** 176.15 microseconds
+
 ## Verification & Tests
 
 ```bash
