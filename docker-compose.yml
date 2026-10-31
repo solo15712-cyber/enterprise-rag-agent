@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  rag_agent:
+    build: .
+    container_name: nexus_enterprise_rag
+    restart: unless-stopped
+    environment:
+      - EMBEDDING_MODEL=text-embedding-3-small
+      - MIN_CONFIDENCE_THRESHOLD=0.30
+    healthcheck:
+      test: ["CMD", "python", "-c", "from rag.retrievers.hybrid import HybridRetriever; HybridRetriever()"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
